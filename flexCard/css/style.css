@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +13,9 @@
     /* justify-content: ;ontent = permet d'aligner verticalement un élément.  */
     /* align-items = permet d'aligner horizontalement un élément.  */
     /* gap = propriété de flex qui permet de rajouter un espace de X pixels. */
+    /* flew-wrap = permet de faire en sorte de modifier l'affichage pour que les éléments ne soient pas écrasés mais se mettent l'un au dessus de l'autre quand on modifie la taille de l'écran*/
     display: flex;
+    flex-wrap: wrap;
     min-height: 100vh;
     background: rgba(68, 117, 136, 0.548);
     justify-content: center;
@@ -26,10 +30,28 @@
     border-radius: 10px;
     overflow: hidden;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    transition: 0.5s;
+}
+
+/* .card:hover {
+    transform: translateY(-20px);
+} */
+/* hover = rajouter du comportement sur un élément en le survolant avec son curseur. */
+
+.card:hover .coeur {
+    left: 0;
+    opacity: 1;
+}
+
+.card:hover .card-header img {
+    transform: scale(1.1);
+    filter: grayscale(0);
 }
 
 .card-header {
     height: 200px;
+    position: relative;
+    overflow: hidden;
 }
 
 .card-header img {
@@ -41,11 +63,6 @@
     transition: 1s;
 }
 
-.card-header img:hover {
-    /* hover = rajouter du comportement sur un élément en le survolant avec son curseur. */
-    filter: grayscale(0);
-}
-
 .card-text {
     padding: 30px;
 }
@@ -53,9 +70,30 @@
 .card-text h1 {
     font-size: 25px;
     margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .card-text p {
     font-size: 14px;
     color: rgb(147, 147, 147);
+    font-weight: 300;
+}
+
+.coeur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: rgb(237, 53, 96);
+    font-size: 20px;
+    position: absolute;
+    top:0;
+    left: -40px;
+    transition: 1s;
+    opacity: 0;
+}
+
+.coeur a {
+    color: #fff;
 }
