@@ -1,4 +1,4 @@
-# HTML_Simpson
+# Flex_Cards
 
 <img style="width:100%" src="https://github.com/Flibouche/FlexCard/blob/main/Images/flexcard_project.png">
 
